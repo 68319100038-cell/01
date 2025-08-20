@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ข่าวต่างประเทศ - ประชาสัมพันธ์ข่าวประจำชั่วโมง</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* ส่วนหัวเว็บ */
+    header {
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      color: white;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    /* เมนูนำทาง */
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      padding: 14px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: #1976d2;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    /* กล่องข่าว */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 30px 15px;
+    }
+    .news-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .news-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .news-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .news-content {
+      padding: 15px;
+    }
+    .news-content h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #222;
+    }
+    .news-content a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .news-content a:hover {
+      background-color: #0d47a1;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>ประชาสัมพันธ์ข่าวประจำชั่วโมง</header>
+
+  <!-- เมนูนำทาง -->
+  <nav>
+    <!-- หน้าแรก -->
+    <a href="1.html" title="กลับไปหน้าแรก">หน้าแรก</a>
+    <!-- ข่าวการเมือง -->
+    <a href="การเมือง.html" title="ดูข่าวการเมือง">ข่าวการเมือง</a>
+    <!-- ข่าวประเทศ -->
+    <a href="ต่างประเทศ.html" title="ดูข่าวในประเทศ">ข่าวประเทศ</a>
+    <!-- อื่นๆ -->
+    <a href="เศรษฐกิจ.html" title="ข่าวหมวดอื่นๆ">เศรษฐกิจ</a>
+  </nav>
+   <h2 style="text-align: center;">ข่าวที่แนะนำ</h2>
+   <!-- ข่าว -->
+  <div class="container">
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgVzHTK1SY1iKK4dw8AgMXPkgESG3UWy9d8UFEdzQvR2Cz.webp" alt="ข่าวที่ 1">
+      <div class="news-content">
+        <h3>กองทัพภาคที่ 2" พบทุ่นระเบิด PMN-2 เพิ่มอีก 3 ทุ่น อยู่ในสภาพใหม่ไม่ใช่ของเก่า</h3>
+        <a href="1.1.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgYXxTWAghqT7id9h3fsikcU8pTqmadmCoHzTJ66nrhwAO.webp" alt="ข่าวที่ 2">
+      <div class="news-content">
+        <h3>กพท. ขอความร่วมมือ "นักบินโดรนเกษตร" ขึ้นทะเบียนตัวโดรน เพื่อให้เป็นไปตามกฎหมาย</h3>
+        <a href="1.2.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgW7sS4yxqIZ9r04xl4gJ8CcBGt93CpC9xo6F4Gx3Nlq0V.webp" alt="ข่าวที่ 3">
+      <div class="news-content">
+        <h3>ชมรม ปศส. สถาบันพระปกเกล้า มอบเงิน-เวชภัณฑ์มูลค่า 320,000 บาท ให้โรงพยาบาลน่าน</h3>
+        <a href="1.3.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

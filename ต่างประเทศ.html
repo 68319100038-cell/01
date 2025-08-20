@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ข่าวต่างประเทศ - ประชาสัมพันธ์ข่าวประจำชั่วโมง</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* ส่วนหัวเว็บ */
+    header {
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      color: white;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    /* เมนูนำทาง */
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      padding: 14px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: #1976d2;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    /* กล่องข่าว */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 30px 15px;
+    }
+    .news-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .news-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .news-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .news-content {
+      padding: 15px;
+    }
+    .news-content h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #222;
+    }
+    .news-content a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .news-content a:hover {
+      background-color: #0d47a1;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>ข่าวต่างประเทศ</header>
+
+  <!-- เมนูนำทาง -->
+  <nav>
+    <a href="1.html">หน้าแรก</a>
+    <a href="การเมือง.html">ข่าวการเมือง</a>
+    <a href="ต่างประเทศ.html">ข่าวประเทศ</a>
+    <a href="เศรษฐกิจ.html">เศรษฐกิจ</a>
+  </nav>
+<h2 style="text-align: center;">ข่าวต่างที่แนะนำ</h2>
+  <!-- ข่าวการเมือง -->
+  <div class="container">
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbDXSFGCn5Bj1XW5jw4ugXnIJZj6heZInFC7FeChBDeM22AF5.webp" alt="ข่าวการเมือง 1">
+      <div class="news-content">
+        <h3>ไต้หวันออกคำเตือนทางทะเล ขณะพายุไต้ฝุ่นโพดุลเคลื่อนตัวเข้าใกล้</h3>
+        <a href="ต่างประเทศ1.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbDXEJ6mqQJwMLuDMrzQM5QulMajodTMiBUm72PxnOe8FJ6wL.webp" alt="ข่าวการเมือง 2">
+      <div class="news-content">
+        <h3>พายุทอร์นาโดไฟพัดผ่านกลุ่มควันจากไฟป่าในโปรตุเกส</h3>
+        <a href="ต่างประเทศ2.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+
+    <div class="news-box">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbDW7XS2n7nj7BUdQhfQAyHpOK79qoyvcfqn0vFtCOPanzt7C.webp" alt="ข่าวการเมือง 3">
+      <div class="news-content">
+        <h3>เนปาลเสนอปีนฟรี 97 ยอดเขา ขณะที่นักท่องเที่ยวไปเอเวอเรสต์เพิ่มขึ้น</h3>
+        <a href="ต่างประเทศ3.html" target="_blank">อ่านเพิ่มเติม</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
