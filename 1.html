@@ -1,8 +1,9 @@
-html lang="th">
+<!DOCTYPE html>
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ข่าวต่างประเทศ - ประชาสัมพันธ์ข่าวประจำชั่วโมง</title>
+  <title>ประชาสัมพันธ์ข่าวประจำชั่วโมง</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -12,7 +13,6 @@ html lang="th">
       color: #333;
     }
 
-    /* ส่วนหัวเว็บ */
     header {
       background: linear-gradient(135deg, #1976d2, #0d47a1);
       color: white;
@@ -24,7 +24,6 @@ html lang="th">
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
 
-    /* เมนูนำทาง */
     nav {
       background: #333;
       display: flex;
@@ -40,11 +39,83 @@ html lang="th">
     }
     nav a:hover {
       background: #1976d2;
-      color: #fff;
       border-radius: 4px;
     }
 
-    /* กล่องข่าว */
+    /* ---------- สไลด์โชว์ ---------- */
+    .slideshow-container {
+      position: relative;
+      max-width: 900px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .mySlides {
+      display: none;
+      position: relative;
+    }
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* พื้นดำโปร่งหลังข้อความ */
+    .text {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    /* ปุ่มลูกศรกลม */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      transition: 0.3s;
+    }
+    .next { right: 15px; }
+    .prev { left: 15px; }
+    .prev:hover, .next:hover { background: rgba(0,0,0,0.85); }
+
+    /* จุดเลื่อน */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* ---------- กล่องข่าว ---------- */
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -67,11 +138,8 @@ html lang="th">
     .news-box img {
       width: 100%;
       height: auto;
-      display: block;
     }
-    .news-content {
-      padding: 15px;
-    }
+    .news-content { padding: 15px; }
     .news-content h3 {
       font-size: 18px;
       margin: 0 0 10px;
@@ -85,63 +153,101 @@ html lang="th">
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s;
     }
-    .news-content a:hover {
-      background-color: #0d47a1;
-    }
+    .news-content a:hover { background-color: #0d47a1; }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
+      .container { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
 
-
   <header>ประชาสัมพันธ์ข่าวประจำชั่วโมง</header>
 
   <!-- เมนูนำทาง -->
   <nav>
-    <!-- หน้าแรก -->
-    <a href="1.html" title="กลับไปหน้าแรก">หน้าแรก</a>
-    <!-- ข่าวการเมือง -->
-    <a href="การเมือง.html" title="ดูข่าวการเมือง">ข่าวการเมือง</a>
-    <!-- ข่าวประเทศ -->
-    <a href="ต่างประเทศ.html" title="ดูข่าวในประเทศ">ข่าวประเทศ</a>
-    <!-- อื่นๆ -->
-    <a href="เศรษฐกิจ.html" title="ข่าวหมวดอื่นๆ">เศรษฐกิจ</a>
+    <a href="1.html">หน้าแรก</a>
+    <a href="การเมือง.html">ข่าวการเมือง</a>
+    <a href="ต่างประเทศ.html">ข่าวประเทศ</a>
+    <a href="เศรษฐกิจ.html">ข่าวเศรษฐกิจ</a>
   </nav>
-   <h2 style="text-align: center;">ข่าวที่แนะนำ</h2>
-   <!-- ข่าว -->
+  <h2 style="text-align: center;">ข่าวที่แนะนำ</h2>
+  <!-- สไลด์โชว์ -->
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <a href="การเมือง1.html"><img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYk8I4a32rnPEs4gB8dmGwlw5PbmfNHqknzPOGd0NUZVncfYg.webp"></a>
+      <div class="text">รัฐบาลเคาะเก็บค่าไฟฟ้าบ้านไม่เกิน 3.94 บาท/หน่วย ในงวดกันยายน-ธันวาคม 68</div>
+    </div>
+    <div class="mySlides">
+      <a href="ต่างประเทศ1.html"><img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYk8BJ5g4SOPWK5l44ir9i0Z2Qqbg6xr6qY3zOTtU9tdmwPr3.webp"></a>
+      <div class="text">สุดระทึก เครื่องบินขับไล่มาเลย์ระเบิดขณะนำเครื่องขึ้น นักบินดีดตัวรอดหวุดหวิด</div>
+    </div>
+    <div class="mySlides">
+      <a href="ต่างประเทศ2.html"><img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYlTzgS9XXeTtaPMbfaGyTy7MYuq1Xztxinb7vELuW3PgHGcB.webp"></a>
+      <div class="text">ฮือฮา ภาพปรากฏการณ์ "ภูตแดง" หายาก กลางท้องฟ้ายามค่ำคืนของทิเบต</div>
+    </div>
+
+    <!-- ปุ่มลูกศร -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- จุดเลื่อน -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+ 
   <div class="container">
+    <!-- ข่าวที่ 1 -->
     <div class="news-box">
-      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgVzHTK1SY1iKK4dw8AgMXPkgESG3UWy9d8UFEdzQvR2Cz.webp" alt="ข่าวที่ 1">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYk8I4a32rnPEs4gB8dmGwlw5PbmfNHqknzPOGd0NUZVncfYg.webp">
       <div class="news-content">
-        <h3>กองทัพภาคที่ 2" พบทุ่นระเบิด PMN-2 เพิ่มอีก 3 ทุ่น อยู่ในสภาพใหม่ไม่ใช่ของเก่า</h3>
-        <a href="1.1.html" target="_blank">อ่านเพิ่มเติม</a>
+        <h3>รัฐบาลเคาะเก็บค่าไฟฟ้าบ้านไม่เกิน 3.94 บาท/หน่วย ในงวดกันยายน-ธันวาคม 68</h3>
+        <a href="การเมือง1.html">อ่านเพิ่มเติม</a>
       </div>
     </div>
-
+    <!-- ข่าวที่ 2 -->
     <div class="news-box">
-      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgYXxTWAghqT7id9h3fsikcU8pTqmadmCoHzTJ66nrhwAO.webp" alt="ข่าวที่ 2">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYk8BJ5g4SOPWK5l44ir9i0Z2Qqbg6xr6qY3zOTtU9tdmwPr3.webp">
       <div class="news-content">
-        <h3>กพท. ขอความร่วมมือ "นักบินโดรนเกษตร" ขึ้นทะเบียนตัวโดรน เพื่อให้เป็นไปตามกฎหมาย</h3>
-        <a href="1.2.html" target="_blank">อ่านเพิ่มเติม</a>
+        <h3>สุดระทึก เครื่องบินขับไล่มาเลย์ระเบิดขณะนำเครื่องขึ้น นักบินดีดตัวรอดหวุดหวิด</h3>
+        <a href="ต่างประเทศ1.html">อ่านเพิ่มเติม</a>
       </div>
     </div>
-
+    <!-- ข่าวที่ 3 -->
     <div class="news-box">
-      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfbEWgW7sS4yxqIZ9r04xl4gJ8CcBGt93CpC9xo6F4Gx3Nlq0V.webp" alt="ข่าวที่ 3">
+      <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa6rfYlTzgS9XXeTtaPMbfaGyTy7MYuq1Xztxinb7vELuW3PgHGcB.webp">
       <div class="news-content">
-        <h3>ชมรม ปศส. สถาบันพระปกเกล้า มอบเงิน-เวชภัณฑ์มูลค่า 320,000 บาท ให้โรงพยาบาลน่าน</h3>
-        <a href="1.3.html" target="_blank">อ่านเพิ่มเติม</a>
+        <h3>ฮือฮา ภาพปรากฏการณ์ "ภูตแดง" หายาก กลางท้องฟ้ายามค่ำคืนของทิเบต</h3>
+        <a href="ต่างประเทศ2.html">อ่านเพิ่มเติม</a>
       </div>
     </div>
   </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n); }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+      for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
 
 </body>
 </html>
